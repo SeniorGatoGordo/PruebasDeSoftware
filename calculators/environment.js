@@ -1,3 +1,4 @@
+const {dummeyDataset} = require("../database/dummyDataset")
 
 
 const tiMonth = (ipc) => {
@@ -129,8 +130,16 @@ const energyConsumed = async (energy_H2_Low_Presure) => {
 }
 
 
+
+// const hydrogenMass = async (energy_H2_Low_Presure) => {
+//     const result = (energy_H2_Low_Presure/('hydrogen_energy_density'))
+//     return result
+// }
+
+//con el uso de la db
+
 const hydrogenMass = async (energy_H2_Low_Presure) => {
-    const result = (energy_H2_Low_Presure/('hydrogen_energy_density'))
+    const result = (energy_H2_Low_Presure/(dummyDataset["hydrogen_energy_density"]))
     return result
 }
 
