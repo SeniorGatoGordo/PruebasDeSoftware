@@ -6,29 +6,30 @@ const tiMonth = (ipc) => {
 };
 
 const fuelEnergySelector = (data) => {
-    let fuel_info = {}
+    let fuel_info = {};
+    data = data.trim().toLowerCase(); 
 
-    if (data === 'diesel' || data === 'Diesel') {
-        fuel_info['fuel_price'] = 11795
-        fuel_info['fuel_energy'] = 40.7
-        fuel_info['emision_factor'] = 74.01
+    if (data === 'diesel') {
+        fuel_info['fuel_price'] = 11795;
+        fuel_info['fuel_energy'] = 40.7;
+        fuel_info['emision_factor'] = 74.01;
         return fuel_info;
     }
 
-    if (data === 'gasoline' || data === 'Gasoline') {
-        fuel_info['fuel_price'] = 16700
-        fuel_info['fuel_energy'] = 35.58
-        fuel_info['emision_factor'] = 69.25
+    if (data === 'gasoline') {
+        fuel_info['fuel_price'] = 16700;
+        fuel_info['fuel_energy'] = 35.58;
+        fuel_info['emision_factor'] = 69.25;
         return fuel_info;
     }
 
-    if (data != "gasoline" || data != "diesel"){
-        return {
-            "error": "Tipo de combustible no valido",
-            "error_code": 500
-        };
-    }
+    return {
+        error: "Tipo de combustible no válido",
+        error_code: 500
+    };
 };
+
+
 
 //  kWh/km
 const electricalConsumption = (nominal_energy, autonomy_nominal) => {

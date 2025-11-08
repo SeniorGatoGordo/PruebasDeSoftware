@@ -4,6 +4,7 @@
   "description": "Api Base Arquitecture",
   "main": "index.js",
   "scripts": {
+     "start": "node api/index.js",
     "test": "node --test test/env_test.js",
     "test_env": "npx mocha --reporter mochawesome test/env_test.js",
     "dev": "nodemon run api/index.js",
